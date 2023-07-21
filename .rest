@@ -1,0 +1,11 @@
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+  "name": "Audrey",
+  "email": "audreykirezi100@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "termsAndConditions": true,
+  "isAdmin": false
+}

@@ -1,0 +1,27 @@
+{
+  "name": "tourism-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "start":"nodemon index"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "config": "^3.3.9",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.1",
+    "lodash": "^4.17.21",
+    "mongodb": "^5.7.0",
+    "mongoose": "^7.4.0",
+    "nodemailer": "^6.9.4",
+    "nodemon": "^3.0.1",
+    "salt": "^0.5.5"
+  }
+}
