@@ -44,16 +44,20 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     required: true,
   },
+  photo: {
+    type: String,
+    required: true,
+  },
   verified: { type: Boolean, default: false },
 });
-userSchema.methods.generateAuthToken = function () {
+//CHECKME: I see on use check file name JwtGenerator does the same
+/* userSchema.methods.generateAuthToken = function () {
 	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY, {
 		expiresIn: "7d",
 	});
 	return token;
 };
-userSchema.index({ email: 1 }, { unique: true });
-
+ */
 const User = mongoose.model('User', userSchema);
 
 
@@ -72,6 +76,7 @@ const validate = (data)=> {
       "any.only": "You must accept the terms and conditions",
     }),
     isAdmin: Joi.boolean().required(),
+    photo: Joi.string().required(),
   });
   return schema.validate(data);
 }

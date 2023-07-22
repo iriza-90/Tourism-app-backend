@@ -1,9 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const { Travel, validateTravel } = require('../models/booking.model');
+const authorize = require('../middleware/authorize');
 
-// POST route to add new travel data to the database
-router.post('/new', async (req, res) => {
+// POST route to add new travel data to the database 
+// authorize middleware is used to check if the user is logged in or not
+router.post('/', authorize, async (req, res) => {
     try {
       const { error } = validateTravel(req.body);
       if (error) {

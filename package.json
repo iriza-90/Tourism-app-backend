@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
+    "cloudinary": "^1.38.0",
     "config": "^3.3.9",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -20,6 +21,8 @@
     "lodash": "^4.17.21",
     "mongodb": "^5.7.0",
     "mongoose": "^7.4.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "nodemailer": "^6.9.4",
     "nodemon": "^3.0.1",
     "salt": "^0.5.5",
