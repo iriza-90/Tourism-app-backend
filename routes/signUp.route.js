@@ -6,56 +6,65 @@ const sendEmail = require("../utils/sendEmail");
 const bcrypt = require("bcrypt");
 const upLoaders = require("../utils/multer");
 const cloudinary = require("../utils/cloudinary");
+const path = require("path");
+
+// middleware to upload images
+// ...
+
 // middleware to upload images
 router.post("/", upLoaders, async (req, res) => {
-    try {
-      const { error } = validate(req.body);
-      if (error) {
-        return res.status(400).send({ message: error.details[0].message });
-      }
-      
-      const { name, email, password, confirmPassword, termsAndConditions, isAdmin } = req.body;
-      const photoUrl = req.file.path;
-      
-      const existingUser = await User.findOne({ email });
-      if (existingUser) {
-        return res.status(409).send({ message: "User with given email already exists!" });
-      }
-  
-      if (password !== confirmPassword) {
-        return res.status(400).send({ message: "Passwords do not match" });
-      }
-
-      const  result = await cloudinary.uploader.upload(photoUrl);
-      const photo = result.url;
-  
-      const salt = await bcrypt.genSalt(Number(process.env.SALT));
-      const hashPassword = await bcrypt.hash(password, salt);
-  
-      const newUser = await new User({
-        name,
-        email,
-        password: hashPassword,
-        confirmPassword: hashPassword, 
-        termsAndConditions,
-        isAdmin,
-        photo
-      }).save();
-  
-      const token = await new Token({
-        userId: newUser._id,
-        token: crypto.randomBytes(32).toString("hex"),
-      }).save();
-  
-      const url = `${process.env.BASE_URL}/users/${newUser._id}/verify/${token.token}`;
-      await sendEmail(newUser.email, "Verify Email", url);
-  
-      res.status(201).send({ message: "An Email sent to your account please verify" });
-    } catch (error) {
-      console.log(error);
-      res.status(500).send({ message: "Internal Server Error" });
+  try {
+    const { error } = validate(req.body);
+    if (error) {
+      return res.status(400).send({ message: error.details[0].message });
     }
-  });
+    
+    const { name, email, password, confirmPassword, termsAndConditions, isAdmin } = req.body;
+    const photoPath = req.file.path; 
+  
+
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res.status(409).send({ message: "User with given email already exists!" });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).send({ message: "Passwords do not match" });
+    }
+
+    const result = await cloudinary.uploader.upload(photoPath); // Use photoBuffer for cloudinary upload
+    const photo = result.url;
+
+    const salt = await bcrypt.genSalt(Number(process.env.SALT));
+    const hashPassword = await bcrypt.hash(password, salt);
+
+    const newUser = await new User({
+      name,
+      email,
+      password: hashPassword,
+      confirmPassword: hashPassword, 
+      termsAndConditions,
+      isAdmin,
+      photo
+    }).save();
+
+    const token = await new Token({
+      userId: newUser._id,
+      token: crypto.randomBytes(32).toString("hex"),
+    }).save();
+
+    const url = `${process.env.BASE_URL}/users/${newUser._id}/verify/${token.token}`;
+    await sendEmail(newUser.email, "Verify Email", url);
+
+    res.status(201).send({ message: "An Email sent to your account please verify" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({ message: "Internal Server Error" });
+  }
+});
+
+// ...
+
   
 // email verification
 router.get("/:id/verify/:token", async (req, res) => {

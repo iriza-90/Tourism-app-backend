@@ -1,10 +1,24 @@
 const mongoose = require("mongoose");
 
 const contactSchema = new mongoose.Schema({
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-    required: false,
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    lowercase: true,
+    validate: {
+      validator: function (value) {
+        return /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/.test(value);
+      },
+      message: 'Invalid email format',
+    },
   },
   message: {
     type: String,
