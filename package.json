@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "start":"nodemon index"
+    "start": "nodemon index"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,7 @@
     "mongoose": "^7.4.0",
     "nodemailer": "^6.9.4",
     "nodemon": "^3.0.1",
-    "salt": "^0.5.5"
+    "salt": "^0.5.5",
+    "uuid": "^9.0.0"
   }
 }

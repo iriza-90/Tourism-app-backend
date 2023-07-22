@@ -3,7 +3,7 @@ const router = express.Router();
 const { Travel, validateTravel } = require('../models/booking.model');
 
 // POST route to add new travel data to the database
-router.post('/', async (req, res) => {
+router.post('/new', async (req, res) => {
     try {
       const { error } = validateTravel(req.body);
       if (error) {
