@@ -13,6 +13,12 @@
       },
       {
         "name": "SIGNUP"
+      },
+      {
+        "name": "LOGIN"
+      },
+      {
+        "name": "USER"
       }
     ],
     "paths": {
@@ -113,7 +119,7 @@
             }
           ],
           "responses": {
-            "200": { "description": "Success" },
+            "204": { "description": "No content" },
             "404": { "description": "Not found" },
             "500": { "description": "Internal server error" }
           }
@@ -142,18 +148,97 @@
                   "isAdmin": { "type": "boolean", "example": false },
                   "photo": { "type": "string", "example": "profile.jpg" }
                 },
-                "required": ["name", "email", "password", "confirmPassword", "termsAndConditions", "isAdmin"]
+                "required": ["name", "email", "password", "confirmPassword", "termsAndConditions"]
               }
             }
           ],
           "responses": {
-            "200": { "description": "Success" },
             "201": { "description": "Created" },
             "400": { "description": "Invalid Data" },
             "500": { "description": "Internal server error" }
           }
         }
+      }, 
+      "/login":{
+        "post": {
+          "tags": ["LOGIN"],
+          "summary": "User Login",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "User information for login",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+              
+                  "email": { "type": "string", "format": "email", "example": "john@example.com" },
+                  "password": { "type": "string", "example": "mypassword" }
+                
+                },
+                "required": ["email", "password"]
+              }
+            }
+          ],
+         
+        "responses":{
+          "201": { "description": "Created" },
+          "400": { "description": "Invalid Data" },
+          "500": { "description": "Internal server error" }
+        }
       }
+    },
+    "/user":{
+      "get":{
+        "tags": ["USER"],
+        "summary": "User Data",
+        "produces": ["application/json"],
+        "responses": {
+          "200": { "description": "Success" },
+          "500": { "description": "Internal server error" }
+        }
+
+      },
+      "put":{
+        "tags":["USER"],
+        "summary":["Update User"],
+        "produces": ["application/json"],
+        "consumes": ["application/json"],
+        "parameters":[
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Update user information" ,
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": { "type": "string", "example": "John Doe" },
+                "email": { "type": "string", "format": "email", "example": "john@example.com" },
+                "password": { "type": "string", "example": "mypassword" },
+                "confirmPassword": { "type": "string", "example": "mypassword" },
+                "termsAndConditions": { "type": "boolean", "example": true },
+                "isAdmin": { "type": "boolean", "example": false },
+                "photo": { "type": "string", "example": "profile.jpg" }
+              },
+              "required": ["name", "email", "password", "confirmPassword", "termsAndConditions"]
+            }
+          }
+
+        ],
+        "reponse":{
+          "201": { "description": "Success" },
+          "500": { "description": "Internal server error" }
+        }
+
+      }
+
+    }
+
+
     }
   }
   

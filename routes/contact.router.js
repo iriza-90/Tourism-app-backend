@@ -44,7 +44,7 @@ router.delete("/:id", async (req, res) => {
         return res.status(404).json({ message: "Message not found" });
       }
   
-      res.status(200).json({
+      res.status(204).json({
         message: "Message deleted successfully",
         firstName: message.firstName,
         lastName: message.lastName,
