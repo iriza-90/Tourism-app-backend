@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema({
   },
   photo: {
     type: String,
-    required: true,
+    required:false,
   },
   verified: { type: Boolean, default: false },
 });
@@ -76,7 +76,7 @@ const validate = (data)=> {
       "any.only": "You must accept the terms and conditions",
     }),
     isAdmin: Joi.boolean().required(),
-    photo: Joi.string().required(),
+    photo: Joi.string(),
   });
   return schema.validate(data);
 }

@@ -1,0 +1,472 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60px;
+    background: #FFFFFF;
+}
+
+header h2 {
+    font-weight: 500;
+}
+
+.logo {
+    display: flex;
+}
+
+.plane {
+    margin-top: 14px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.bell {
+    display: flex;
+    width: 100px;
+    justify-content: space-evenly;
+}
+
+.bells {
+    height: 20px;
+    margin-top: 4px;
+}
+
+.person {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.kmj {
+    width: 100%;
+    height: 100%;
+}
+
+.secure {
+    margin-left: 80px;
+    margin-top: 50px;
+    margin-bottom: 40px;
+}
+
+.room {
+    margin-left: 80px;
+    width: 700px;
+    background: #FFFFFF;
+    height: 350px;
+    border-radius: 6px;
+}
+
+.head {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: #85e0ab;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.security {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.head h3 {
+    margin-right: 10px;
+}
+
+.head h4 {
+    font-weight: 300;
+}
+
+.name1 {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    margin-right: 20px;
+}
+
+#first {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+}
+
+#last {
+    height: 30px;
+    background-color:#f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+}
+
+.name2 {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.x {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+.y {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+.code {
+    display: flex;
+    flex-direction: column;
+}
+
+.number {
+    margin-top: 23px;
+}
+
+#code {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 100px;
+}
+
+#number {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 295px;
+}
+
+.email {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+
+#email {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 414px;
+}
+
+.alerts {
+    display: flex;
+    margin-left: 16px;
+}
+
+#check {
+    margin-right: 6px;
+    width: 20px;
+}
+
+.alerts h5{
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+}
+
+.payment {
+    margin-left: 80px;
+    width: 700px;
+    background: #FFFFFF;
+    height: 350px;
+    border-radius: 6px;
+}
+
+.payment h4 {
+    font-weight: 500;
+}
+
+.container1 {
+    display: flex;
+    margin-top: 30px;
+}
+
+.card {
+    margin-left: 15px;
+    margin-right: 10px;
+}
+
+.links {
+    border-bottom: 2px solid #f2f2f2;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.links a {
+    text-decoration: none;
+    color: black;
+    margin-right: 40px;
+}
+
+.links a:first-of-type {
+    margin-left: 30px;
+}
+
+.icons {
+    margin-left: 25px;
+    margin-top: 15px;
+}
+
+.book {
+    margin-left: 80px;
+    width: 700px;
+    background: #FFFFFF;
+    height: 650px;
+    border-radius: 6px;
+    margin-top:40px;
+}
+
+.book h4{
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.city {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.dep {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.arr {
+    display: flex;
+    flex-direction: column;
+}
+
+#depart {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 150px;
+}
+
+#arrive {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.dat {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.in {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.out {
+    display: flex;
+    flex-direction: column;
+}
+
+#in{
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 150px;
+}
+
+#out {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.other {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.guest {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+.activity {
+    display: flex;
+    flex-direction: column
+}
+
+#guest {
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 150px;
+}
+
+#activity{
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 150px;
+}
+
+.currentp {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.special {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+#pref{
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 350px;
+
+}
+
+#req{
+    height: 30px;
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    width: 350px;
+
+}
+
+.hotel {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.flight{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.a{
+    display: flex;
+    margin-left: 20px;
+}
+
+.info {
+    margin-top: 40px;
+    margin-left: 80px;
+    width:  900px;
+    height: 350px;
+    background: white;
+    margin-bottom: 40px;
+    border-radius: 6px;
+}
+
+.info h4{
+    margin-left: 20px;
+    font-weight: 400;
+}
+
+.info h5 {
+    margin-left: 30px;
+    font-weight: 200;
+}
+
+.info h6{
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+button{
+    margin-left: 20px;
+    background: green;
+    color: white;
+    padding: 10px;
+    border: 1px solid green;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+.footer{
+    box-shadow: 0px -2px 2px 0px #696868;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+.foot{
+    display: flex;
+}
+
+.foot h4{
+    font-size: 25px;
+}
+.foot1,.foot2,.foot3,.foot4,.foot5{
+    margin:50px;
+}
+
+.footer ul,p{
+  margin-top: 15px;
+}
+
+.footer ul li{
+    margin-top: 10px;
+}
+
+.footer a{
+    color: green;
+}

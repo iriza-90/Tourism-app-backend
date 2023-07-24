@@ -9,6 +9,8 @@ const travelRoute = require("./routes/booking.route");
 const logInRoute = require("./routes/logIn.route");
 const userRoute = require("./routes/user.router");
 const contactRoute = require("./routes/contact.router");
+const swaggerUi= require ('swagger-ui-express')
+const swaggerJson = require('./swagger.json')
 
 const PORT = process.env.PORT || 5000;
 
@@ -27,11 +29,11 @@ mongoose
 
   .then(() => console.log("Connected to database successfully"))
   .catch((err) => console.log(err));
-
+  app.use("/swagger", swaggerUi.serve,swaggerUi.setup(swaggerJson))
 app.use("/users", signUpRoute);
 app.use("/user", userRoute);
 app.use("/login", logInRoute);
-app.use("/travels", travelRoute);
+app.use("/api/bookings", travelRoute);
 app.use("/contact", contactRoute);
 
 app.listen(PORT, () => {

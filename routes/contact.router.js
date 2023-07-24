@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const ContactMessage = require("../models/contact.model");
 
-router.post("/contact", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
       const { firstName, lastName, email, message } = req.body;
   
@@ -20,7 +20,7 @@ router.post("/contact", async (req, res) => {
     }
   });
 
-  router.get("/contact", async (req, res) => {
+  router.get("/", async (req, res) => {
     try {
       // Retrieve all contact messages from the database
       const messages = await ContactMessage.find().sort({ createdAt: -1 });
@@ -34,7 +34,7 @@ router.post("/contact", async (req, res) => {
   
 
 // DELETE route to delete a contact message by ID
-router.delete("/contact/:id", async (req, res) => {
+router.delete("/:id", async (req, res) => {
     try {
       const messageId = req.params.id;
   

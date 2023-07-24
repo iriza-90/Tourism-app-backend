@@ -1,0 +1,278 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+.nav-bar {
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+
+}
+
+.nav-bar img{
+    width: 40px;
+    height: 40px;
+
+}
+
+.title {
+    display: flex;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.menu ul {
+    display: inline-flex;
+    top: 0px;
+    margin-left: 500px;
+    margin-top: 10px;
+}
+
+.menu ul li {
+    padding: 15px;
+
+
+}
+
+.menu ul li a {
+   text-decoration: none;
+   color: black;
+
+}
+
+
+.about img{
+    width: 100%;
+    height: 500px;
+}
+
+
+
+.live{
+  width: 600px;
+  position: absolute;
+  color: white;
+  top: 200px;
+  left: 100px;
+}
+
+.live h1{
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+
+
+
+.adventure{
+    margin:50px 100px;
+    display: flex;
+}
+
+.adventure img{
+    width: 150px;
+    height: 250px;
+    border-radius: 100px;
+    margin-right: 20px;
+}
+
+.experience{
+    margin-left: 250px;
+    display: flex;
+}
+
+.img2{
+    margin-top: 120px;
+}
+.text{
+    width: 500px;
+}
+
+.text h1{
+    margin-bottom: 50px;
+}
+
+
+
+
+.embrace{
+    margin: 50px 100px 50px ;
+}
+
+.thrill{
+    display: flex;
+    margin-top: 50px;
+}
+
+.thrill img{
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+    
+}
+
+.thrill2{
+ margin-left: 200px;
+ width: 500px;
+}
+
+.thrill2 ul{
+    margin-left: 20px;
+}
+
+.thrill2 ul li{
+    margin-bottom: 30px;
+}
+
+.dream{
+    width: 100%;
+    height: 200px;
+    background-color: #c3ddff;
+    text-align: center;
+
+
+}
+
+.dream h1{
+    padding-top: 50px;
+    padding-bottom: 40px;
+}
+
+.dream span{
+    color: #008000;
+}
+
+.dream a{
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #008000;
+}
+
+.plan{
+    margin:30px 100px;
+}
+
+.plan h1,p,a{
+    margin-bottom: 30px;
+}
+
+
+.plan a{
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #2F80ED;
+    margin-bottom: 20px;
+}
+
+.app{
+    margin: 30px 100px 100px;
+   
+}
+
+.app img{ 
+    width: 1100px;
+    height: 300px;
+    border-radius: 10px;
+    margin-left: 50px;
+
+}
+
+.text2{
+    position: absolute;
+    top: 2450px;
+    left: 200px;
+    color: white;
+    width: 500px;
+
+}
+
+.text2 h3{
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.text2 a{
+    border-radius: 5px;
+    text-decoration: none;
+    background-color:  #80b1f1;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.footer{
+    box-shadow: 0px -2px 2px 0px #8d8b8b;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+.foot{
+    display: flex;
+}
+
+.foot h4{
+    font-size: 25px;
+}
+
+.foot1,.foot2,.foot3,.foot4,.foot5{
+    margin:50px;
+}
+
+.footer ul,p{
+  margin-top: 15px;
+}
+
+.footer ul li{
+    margin-top: 10px;
+}
+
+.footer a{
+    color: green;
+}
+
+.images{
+    margin:30px 100px;
+}
+
+.images img{
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+
+.images h1:nth-child(1){
+    position: absolute;
+    top: 1400px;
+    left: 150px;
+    color: white;
+}
+
+.images h1:nth-child(2){
+    position: absolute;
+    top: 1400px;
+    left: 550px;
+    color: white;
+}
+
+.images h1:nth-child(3){
+    position: absolute;
+    top: 1400px;
+    left: 950px;
+    color: white;
+} 
+
+

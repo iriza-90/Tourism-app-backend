@@ -1,0 +1,307 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+}
+
+body{
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+.nav-bar {
+    box-shadow: 0px 2px 4px 0px #000000;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 100%;
+    height: 60px;
+    display: flex;
+
+}
+
+.title {
+    display: flex;
+    margin:10px 100px;
+}
+
+.menu ul {
+    display: inline-flex;
+    top: 0px;
+    margin:10px 200px;
+    
+
+
+}
+
+.menu ul li {
+    padding: 15px;
+
+
+}
+
+.menu ul li a {
+   text-decoration: none;
+   color: black;
+
+}
+
+.search img{
+    margin: 10px 150px;
+    width: 1100px;
+    height: 500px;
+    border-radius: 5px;
+
+}
+
+.nav{
+    box-shadow: 0px 4px 37px 0px #000000;
+    position: absolute;
+    top: 550px;
+    left: 250px;
+    width: 900px;
+    height: 60px;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+}
+
+.nav1,.nav2,.nav3,.nav4{
+    display: flex;
+    background-color: rgb(222, 218, 218);
+    border-radius: 5px;
+    margin: 10px ;
+    width: 200px;
+    
+}
+
+.nav p{
+    width: 30px;
+    margin-top: 5px;
+    
+}
+
+.nav img{
+    width: 20px;
+    height: 20px;
+    margin:5px 5px;
+    
+}
+
+
+.text{
+    position: absolute;
+    top: 200px;
+    left: 450px;
+    color: white;
+    width: 500px;
+}
+
+.text h1{
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.text p{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.body{
+    margin: 80px 150px;
+}
+
+.interest h3{
+    margin-left: 10px;
+}
+
+
+
+.country p{
+    margin-top: 0px;
+}
+.country div:nth-child(1){
+    position: absolute;
+    top: 880px;
+    left: 200px;
+
+}
+
+.country div:nth-child(2){
+    position: absolute;
+    top: 880px;
+    left: 500px;
+
+}
+
+.country div:nth-child(3){
+    position: absolute;
+    top: 880px;
+    left: 800px;
+
+}
+
+.country div:nth-child(4){
+    position: absolute;
+    top: 880px;
+    left: 1100px;
+
+}
+
+.interests div:nth-child(1){
+    width: 340px;
+    position: absolute;
+    top: 1100px;
+    left: 160px;
+    color: white;
+
+}
+
+.interests div:nth-child(2){
+    width: 340px;
+    position: absolute;
+    top: 1100px;
+    left: 530px;
+    color: white;
+
+}
+
+.interests div:nth-child(3){
+    width: 340px;
+    position: absolute;
+    top: 1100px;
+    left: 890px;
+    color: white;
+
+}
+
+.activities h2:nth-child(1){
+    position: absolute;
+    top: 1500px;
+    left: 250px;
+    color: white;
+}
+
+.activities h2:nth-child(2){
+    position: absolute;
+    top: 1500px;
+    left: 500px;
+    color: white;
+}
+
+.activities h2:nth-child(3){
+    position: absolute;
+    top: 1500px;
+    left: 750px;
+    color: white;
+}
+.activities h2:nth-child(4){
+    position: absolute;
+    top: 1500px;
+    left: 1050px;
+    color: white;
+}
+
+.countries h3,
+.activity h3{
+    margin-left: 15px;
+}
+.countries img
+{
+    width: 240px;
+    height: 170px;
+    border-radius: 5px;
+    margin:10px 15px;
+   
+    
+}
+
+.activity img{
+    width: 240px;
+    height: 240px;
+    border-radius: 5px;
+    margin:10px 15px;
+    
+
+}
+
+.interest img{
+    width: 340px;
+    height: 250px;
+    border-radius: 5px;
+    margin:10px 10px;
+    
+}
+.country,.interest,.activity,.dream,.app{
+    margin-top: 50px;
+}
+
+
+.app img{ 
+    width: 1100px;
+    height: 300px;
+    border-radius: 10px;
+
+}
+
+.text2{
+    position: absolute;
+    top: 1750px;
+    left: 200px;
+    color: white;
+    width: 500px;
+
+}
+
+.text2 h3{
+    font-size: 25px;
+    margin-bottom: 40px;
+}
+
+.text2 a{
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #80b1f1;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+}
+
+.footer{
+    box-shadow: 0px -2px 2px 0px #696868;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+    width: 100%;
+    height: 350px;
+    display: flex;
+}
+.foot{
+    display: flex;
+}
+
+.foot h4{
+    font-size: 25px;
+}
+.foot1,.foot2,.foot3,.foot4,.foot5{
+    margin:50px;
+}
+
+.footer ul,p{
+  margin-top: 15px;
+}
+
+.footer ul li{
+    margin-top: 10px;
+}
+
+.footer a{
+    color: green;
+}
+
+.dream h3,p{
+    text-align: center;
+}
+

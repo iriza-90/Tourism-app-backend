@@ -1,0 +1,159 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "description": "Tourism backend",
+      "title": "Tourism backend"
+    },
+    "tags": [
+      {
+        "name": "BOOKING"
+      },
+      {
+        "name": "CONTACT"
+      },
+      {
+        "name": "SIGNUP"
+      }
+    ],
+    "paths": {
+      "/api/bookings": {
+        "post": {
+          "tags": ["BOOKING"],
+          "summary": "Booking info",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Booking information",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string", "example": "joella" },
+                  "email": { "type": "string", "format": "email", "example": "joella@gmail.com" },
+                  "phoneNumber": { "type": "string", "example": "07888888" },
+                  "numberOfPeople": { "type": "integer", "format": "int32", "example": 2 },
+                  "checkInDate": { "type": "string", "format": "date", "example": "2023-07-24" },
+                  "checkOutDate": { "type": "string", "format": "date", "example": "2023-07-24" },
+                  "activitySelection": { "type": "string", "example": "traveling" },
+                  "departureCity": { "type": "string", "example": "paris" },
+                  "arrivalCity": { "type": "string", "example": "london" },
+                  "carRentalPreferences": { "type": "string", "example": "casual" },
+                  "specialRequest": { "type": "string", "example": "big-room" },
+                  "hotelRoomReservation": { "type": "boolean", "example": true },
+                  "flightReservation": { "type": "boolean", "example": true }
+                },
+                "required": ["name", "email", "phoneNumber", "numberOfPeople", "checkInDate", "checkOutDate", "activitySelection", "departureCity", "arrivalCity"]
+              }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Success" },
+            "201": { "description": "Created" },
+            "400": { "description": "Invalid Data" },
+            "500": { "description": "Internal server error" }
+          }
+        }
+      },
+      "/contact": {
+        "post": {
+          "tags": ["CONTACT"],
+          "summary": "Contact info",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "Contact information",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "firstName": { "type": "string", "example": "John" },
+                  "lastName": { "type": "string", "example": "Doe" },
+                  "email": { "type": "string", "format": "email", "example": "john@example.com" },
+                  "message": { "type": "string", "example": "Hello, I'm interested in your services." }
+                },
+                "required": ["firstName", "lastName", "email", "message"]
+              }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Success" },
+            "201": { "description": "Created" },
+            "400": { "description": "Invalid Data" },
+            "500": { "description": "Internal server error" }
+          }
+        },
+        "get": {
+          "tags": ["CONTACT"],
+          "summary": "Get all contact information",
+          "produces": ["application/json"],
+          "responses": {
+            "200": { "description": "Success" },
+            "500": { "description": "Internal server error" }
+          }
+        }
+      },
+      "/contact/{id}": {
+        "delete": {
+          "tags": ["CONTACT"],
+          "summary": "Delete contact by ID",
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "ID of the contact to delete",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "200": { "description": "Success" },
+            "404": { "description": "Not found" },
+            "500": { "description": "Internal server error" }
+          }
+        }
+      },
+      "/users": {
+        "post": {
+          "tags": ["SIGNUP"],
+          "summary": "User signup",
+          "consumes": ["application/json"],
+          "produces": ["application/json"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "User information for signup",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string", "example": "John Doe" },
+                  "email": { "type": "string", "format": "email", "example": "john@example.com" },
+                  "password": { "type": "string", "example": "mypassword" },
+                  "confirmPassword": { "type": "string", "example": "mypassword" },
+                  "termsAndConditions": { "type": "boolean", "example": true },
+                  "isAdmin": { "type": "boolean", "example": false },
+                  "photo": { "type": "string", "example": "profile.jpg" }
+                },
+                "required": ["name", "email", "password", "confirmPassword", "termsAndConditions", "isAdmin"]
+              }
+            }
+          ],
+          "responses": {
+            "200": { "description": "Success" },
+            "201": { "description": "Created" },
+            "400": { "description": "Invalid Data" },
+            "500": { "description": "Internal server error" }
+          }
+        }
+      }
+    }
+  }
+  

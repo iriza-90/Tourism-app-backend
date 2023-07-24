@@ -14,7 +14,7 @@ const upLoaders = multer({
   fileFilter: function (req, file, cb) {
     checkFileType(file, cb);
   },
-}).single('photo');
+}).single('photoPath');
 
 function checkFileType(file, cb) {
   // Allowed ext
