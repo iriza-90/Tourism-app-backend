@@ -19,7 +19,7 @@ router.post("/", upLoaders, async (req, res) => {
       return res.status(400).send({ message: error.details[0].message });
     }
 
-    const { name, email, password, confirmPassword, termsAndConditions, isAdmin } = req.body;
+    const { name, email, password, confirmPassword, termsAndConditions } = req.body;
     const photoPath = req.file.path;
     const result = await cloudinary.uploader.upload(photoPath);
    // console.log(photoPath, result)
@@ -46,7 +46,6 @@ router.post("/", upLoaders, async (req, res) => {
       password: hashPassword,
       confirmPassword: hashPassword,
       termsAndConditions,
-      isAdmin,
       photo,
     }).save();
 

@@ -14,7 +14,7 @@ router.post("/", async (req, res) => {
     
     const existingUser = await User.findOne({ email });
     if (!existingUser) {
-      return res.status(401).send({ message: "User not found" });
+      return res.status(400).send({ message: "User not found" });
     }
    
     const validPassword = await bcrypt.compare(password, existingUser.password);
@@ -50,7 +50,7 @@ router.post("/forget", async (req, res) => {
       const url = `${process.env.BASE_URL}/${existingUser._id}/reset/${token}`;
       await sendEmail(email, "Reset Password", url);
     }
-    res.status(200).send({ message: "Email sent for password reset" });
+    res.status(201).send({ message: "Email sent for password reset" });
   } catch (error) {
     res.status(500).send({ message: "Internal Server Error" });
   }

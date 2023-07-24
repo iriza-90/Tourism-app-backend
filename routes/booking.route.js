@@ -9,16 +9,16 @@ router.post('/', authorize, async (req, res) => {
     try {
       const { error } = validateTravel(req.body);
       if (error) {
-        return res.status(400).send({ message: error.details[0].message });
+        return res.status(400).json({ message: error.details[0].message });
       }
   
       const newTravel = new Travel(req.body);
       await newTravel.save();
   
-      res.status(201).send({ message: 'Travel data saved successfully' });
+      res.status(201).json({ message: 'Travel data saved successfully' });
     } catch (error) {
       console.error(error);
-      res.status(500).send({ message: 'Internal Server Error' });
+      res.status(500).json({ message: 'Internal Server Error' });
     }
   });
 
@@ -26,10 +26,10 @@ router.post('/', authorize, async (req, res) => {
 router.get('/', async (req, res) => {
   try {
     const travelData = await Travel.find();
-    return res.status(200).send(travelData);
+    return res.status(200).json(travelData);
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 

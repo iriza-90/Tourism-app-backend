@@ -12,23 +12,23 @@ router.get('/', authorize, async (req, res) => {
         { _id: req.user.id },
     );
 
-    return res.status(200).send(userData);
+    return res.status(200).json({userData});
   } catch (error) {
     console.log(error);
-    res.status(500).send({ message: 'Internal Server Error' });
+    res.status(500).json({ message: 'Internal Server Error' });
   }
 });
 
 router.put('/', authorize, upLoaders, async (req, res) => {
     try {
-        const { name, email, password, confirmPassword, termsAndConditions, isAdmin } = req.body;
+        const { name, email, password, confirmPassword, termsAndConditions} = req.body;
         const photoUrl = req.file.path;
        
 
         const salt = await bcrypt.genSalt(Number(process.env.SALT));
         const hashPassword = await bcrypt.hash(password, salt);
         if(password !== confirmPassword){
-            return res.status(400).send({message: "Passwords do not match"});
+            return res.status(400).json({message: "Passwords do not match"});
         }
          const result = await cloudinary.uploader.upload(photoUrl);
         const photo = result.url;
@@ -40,15 +40,14 @@ router.put('/', authorize, upLoaders, async (req, res) => {
                 password: hashPassword,
                 confirmPassword: hashPassword,
                 termsAndConditions,
-                isAdmin,
                 photo
             },
             { new: true }
         );
-        return res.status(200).send(updatedUser);
+        return res.status(201).json({updatedUser});
     } catch (error) {
         console.log(error);
-        res.status(500).send({ message: 'Internal Server Error' });
+        res.status(500).json({ message: 'Internal Server Error' });
     }
 });
 
